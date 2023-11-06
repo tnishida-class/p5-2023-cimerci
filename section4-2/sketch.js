@@ -23,8 +23,8 @@ function mouseDragged(){
   const dx = mouseX - pmouseX;
   const dy = mouseY - pmouseY;
   if(mag(dx, dy) > 5){
-    const b = { x: mouseX, y: mouseY, size: 20, vx: dx, vy: dy };
-    balls.push(b);
+    const b = { x: mouseX, y: mouseY, size: random(1,50), vx: dx, vy: dy };
+    balls.push(b); //配列名.push(値);  末尾に値を追加する
   }
 }
 
