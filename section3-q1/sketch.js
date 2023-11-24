@@ -26,3 +26,31 @@ function draw(){
   // BLANK[1]
   ellipse(width / 2, height / 2, size);
 }
+
+//2回目制作　内容同じ
+// let size = 50;
+//     count = 0;
+//     v = 1;
+
+// function setup() {
+//   createCanvas(400, 400);
+// }
+
+// function draw() {
+//   background(160, 192, 255);
+//   count = (count + v) % 100
+//  if(keyIsPressed){
+//     v = 2
+//   }
+//   else{
+//     v = 1
+//   }
+//   if(count < 50){
+//     size = 50 + count
+//   }
+//   else{
+//     size = 150 - count
+//   }
+//   ellipse(width/2, width/2, size)
+// }
+
