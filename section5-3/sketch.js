@@ -27,7 +27,14 @@ function isLeapYear(y){
 
 function daysInYear(y){
   // BLANK[1]
+  if(isLeapYear(y)){
+    return 366;
+    }
+  else{
+    return 365;
+  }
 }
+console.log(daysInYear(2000))
 
 function daysInMonth(y, m){
   if(m == 2){
@@ -49,11 +56,40 @@ function dayOfYear(y, m, d){
   return count + d;
 }
 
-function dayOfWeek(y, m, d){
-  // BLANK[2]
+function dayOfWeek(y, m, d) {
+  // もとにするのは　(1970, 1, 1);
+  let sum = 0;
+
+  for (let year = 1970; year < y; year++) {
+  sum += daysInYear(year);
+  }
+
+  for (let month = 1; month < m; month++) {
+  sum += daysInMonth(y, month);
+  }
+
+  sum += d - 1; 
+  return (sum + 4) % 7;
 }
+
 
 function dayOfWeekAsString(dow){
   const a = ["日", "月", "火", "水", "木", "金", "土", "日"];
   return a[dow];
 }
+console.log(dayOfWeekAsString(dayOfWeek(2001, 6, 25)))
+
+// // Math.floorを使って日数差を計算
+// function dayOfWeek(y, m, d){
+//   // BLANK[2]
+//   const p = new Date(1970, 1, 1);
+//         q = new Date(y, m, d);
+//         daysDiff = Math.floor((q - p)/(1000*60*60*24));
+//   return (daysDiff + 4) % 7; 
+// }
+
+// function dayOfWeekAsString(dow){
+//   const a = ["日", "月", "火", "水", "木", "金", "土", "日"];
+//   return a[dow];
+// }
+// console.log(dayOfWeekAsString(dayOfWeek(2001, 8, 2)))
